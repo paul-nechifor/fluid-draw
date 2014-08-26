@@ -8,8 +8,15 @@ module.exports = class Painter
       @optsMap[opt.name] = opt
     return
 
+  validateValues: ->
+    errs = []
+    for opt in @optsList
+      err = opt.validate()
+      errs.push opt.name + ': ' + err if err?
+    errs
+
   paintAll: (cb) ->
     cb 'not-implemented'
 
   paintPartial: (cb) ->
-    cb 'not-implemented'
+    paintAll cb

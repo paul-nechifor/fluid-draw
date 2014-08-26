@@ -17,4 +17,11 @@ exports.Number = class Number extends Option
 exports.Color = class Color extends Option
   constructor: (name, initial, desc) ->
     super
-    @validateFunc = -> true # TODO
+    @validateFunc = =>
+      return 'non-string' unless typeof @value is 'string'
+      return 'invalid hex color' unless /^[0-9a-f]{6}$/i.test @value
+      @r = parseInt @value.substring(0, 2), 16
+      @g = parseInt @value.substring(2, 4), 16
+      @b = parseInt @value.substring(4, 6), 16
+      return null
+
