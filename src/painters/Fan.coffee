@@ -1,9 +1,7 @@
-fluidDraw = require '../../src'
-opts = fluidDraw.options
-Canvas = require 'canvas'
-fs = require 'fs'
+opts = require '../options'
+Painter = require '../Painter'
 
-class Fan extends fluidDraw.Painter
+module.exports = class Fan extends Painter
   constructor: (@canvas) ->
     super
     @setOpts [
@@ -56,16 +54,3 @@ class Fan extends fluidDraw.Painter
       @ctx.lineTo @width, @height
       @ctx.lineTo @width, 0
     @ctx.fill()
-
-main = ->
-  canvas = new Canvas
-  fan = new Fan canvas
-  fan.paintAll (err) ->
-    throw err if err
-
-    out = fs.createWriteStream __dirname + '/fan.png'
-    stream = canvas.pngStream()
-    stream.on 'data', (chunk) -> out.write chunk
-    stream.on 'end', () -> console.log 'done'
-
-main()

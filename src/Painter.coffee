@@ -8,6 +8,11 @@ module.exports = class Painter
       @optsMap[opt.name] = opt
     return
 
+  set: (changes) ->
+    for key, value of changes
+      @optsMap[key].value = value
+    return
+
   validateValues: ->
     errs = []
     for opt in @optsList
