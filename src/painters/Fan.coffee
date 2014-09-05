@@ -9,6 +9,8 @@ module.exports = class Fan extends Painter
       new opts.Number 'height', 256, 10, null, 'Height of the image.'
       new opts.Color 'primary', '0000ff', 'Primary color (left one).'
       new opts.Color 'secondary', 'ff0000', 'Secondary color (right one).'
+      new opts.String 'customFill', '',
+          'Custom fill for trapezoids (ex: "rgba(0, 0, 0, 0.1)").'
       new opts.Color 'drawColor', 'ffffff', 'Text and circle color.'
       new opts.Number 'angle', 25, 0, 90, 'Angle of the shape.'
       new opts.Number 'stripes', 8, 0, null, 'Number of stripes.'
@@ -58,8 +60,11 @@ module.exports = class Fan extends Painter
   paintTrapezoid: (start, reverse) ->
     stop = start + @height * Math.tan @angle
     color2 = @optsMap.secondary
-    transp = 1 / (@stripes + 0.2) # So it looks a little better
-    @ctx.fillStyle = "rgba(#{color2.r}, #{color2.g}, #{color2.b}, #{transp})"
+    if @optsMap.customFill.value.length > 0
+      @ctx.fillStyle = @optsMap.customFill.value
+    else
+      transp = 1 / (@stripes + 0.2) # So it looks a little better
+      @ctx.fillStyle = "rgba(#{color2.r}, #{color2.g}, #{color2.b}, #{transp})"
     @ctx.beginPath()
     if reverse
       @ctx.moveTo start, @height
