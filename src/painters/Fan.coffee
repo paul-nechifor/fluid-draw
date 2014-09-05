@@ -18,6 +18,9 @@ module.exports = class Fan extends Painter
           'Circle radius (ratio of width).'
       new opts.Number 'circleLineWidth', 0.01, 0, null,
           'Circle line width (radio of width).'
+      new opts.String 'text', 'FAN', 'Text to be drawn.'
+      new opts.String 'fontName', 'sans-serif', 'Font name.'
+      new opts.Number 'fontSize', 0.08, 0, null, 'Font size.'
     ]
 
   paintAll: (cb) ->
@@ -33,6 +36,8 @@ module.exports = class Fan extends Painter
     @stripeStart = (@width - @stripeSize * (@stripes - 1) - slant) / 2
     @radius = @optsMap.circleRadius.value * @width
     @lineWidth = @optsMap.circleLineWidth.value * @width
+    @text = @optsMap.text.value
+    @fontSize = @optsMap.fontSize.value * @width
 
     @ctx = @canvas.getContext '2d'
     @ctx.fillStyle = '#' + @optsMap.primary.value
@@ -44,6 +49,9 @@ module.exports = class Fan extends Painter
 
     if @radius > 0
       @paintCircle()
+
+    if @text.length > 0
+      @paintText()
 
     cb()
 
@@ -71,3 +79,11 @@ module.exports = class Fan extends Painter
     @ctx.lineWidth = @lineWidth
     @ctx.strokeStyle = '#' + @optsMap.drawColor.value
     @ctx.stroke()
+
+  paintText: ->
+    @ctx.font = @fontSize + 'px ' + @optsMap.fontName.value
+    @ctx.fillStyle = '#' + @optsMap.drawColor.value
+    m = @ctx.measureText @text
+    x = (@width - m.width) / 2
+    y = (@height + m.actualBoundingBoxAscent) / 2
+    @ctx.fillText @text, x, y

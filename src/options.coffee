@@ -25,3 +25,9 @@ exports.Color = class Color extends Option
       @b = parseInt @value.substring(4, 6), 16
       return null
 
+exports.String = class String extends Option
+  constructor: (name, initial, desc) ->
+    super
+    @validateFunc = ->
+      return 'non-string' unless typeof @value is 'string'
+      return null
