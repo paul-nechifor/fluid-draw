@@ -5,6 +5,7 @@ exports.Painter = require './Painter'
 exports.options = require './options'
 exports.painters =
   Fan: require './painters/Fan'
+  Squares: require './painters/Squares'
 
 exports.saveCanvas = (canvas, file, cb) ->
   out = fs.createWriteStream file

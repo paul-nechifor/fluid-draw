@@ -7,7 +7,8 @@
     "preinstall": "rm lib/*; coffee --compile --bare --output lib src"
   },
   "dependencies": {
-    "canvas": "^1.1.6"
+    "canvas": "^1.1.6",
+    "color": "^0.7.1"
   },
   "repository": {
     "type": "git",
