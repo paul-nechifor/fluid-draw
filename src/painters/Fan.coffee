@@ -88,7 +88,14 @@ module.exports = class Fan extends Painter
   paintText: ->
     @ctx.font = @fontSize + 'px ' + @optsMap.fontName.value
     @ctx.fillStyle = '#' + @optsMap.drawColor.value
-    m = @ctx.measureText @text
-    x = (@width - m.width) / 2
-    y = (@height + m.actualBoundingBoxAscent) / 2
-    @ctx.fillText @text, x, y
+    lines = @text.split '\n'
+    textHeight = @fontSize
+    startY = (@height - (0.5 + lines.length) * textHeight) / 2 +
+        0.1 * textHeight
+    for line in lines
+      m = @ctx.measureText line
+      x = (@width - m.width) / 2
+      y = startY + textHeight
+      @ctx.fillText line, x, y
+      startY += textHeight
+    return
