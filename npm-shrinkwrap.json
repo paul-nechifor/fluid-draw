@@ -1,0 +1,130 @@
+{
+  "name": "fluid-draw",
+  "version": "1.0.0",
+  "dependencies": {
+    "canvas": {
+      "version": "1.6.5",
+      "from": "canvas@>=1.6.5 <2.0.0",
+      "resolved": "https://registry.npmjs.org/canvas/-/canvas-1.6.5.tgz",
+      "dependencies": {
+        "nan": {
+          "version": "2.6.2",
+          "from": "nan@>=2.4.0 <3.0.0",
+          "resolved": "https://registry.npmjs.org/nan/-/nan-2.6.2.tgz"
+        },
+        "parse-css-font": {
+          "version": "2.0.2",
+          "from": "parse-css-font@>=2.0.2 <3.0.0",
+          "resolved": "https://registry.npmjs.org/parse-css-font/-/parse-css-font-2.0.2.tgz",
+          "dependencies": {
+            "css-font-size-keywords": {
+              "version": "1.0.0",
+              "from": "css-font-size-keywords@>=1.0.0 <2.0.0",
+              "resolved": "https://registry.npmjs.org/css-font-size-keywords/-/css-font-size-keywords-1.0.0.tgz"
+            },
+            "css-font-stretch-keywords": {
+              "version": "1.0.1",
+              "from": "css-font-stretch-keywords@>=1.0.1 <2.0.0",
+              "resolved": "https://registry.npmjs.org/css-font-stretch-keywords/-/css-font-stretch-keywords-1.0.1.tgz"
+            },
+            "css-font-style-keywords": {
+              "version": "1.0.1",
+              "from": "css-font-style-keywords@>=1.0.1 <2.0.0",
+              "resolved": "https://registry.npmjs.org/css-font-style-keywords/-/css-font-style-keywords-1.0.1.tgz"
+            },
+            "css-font-weight-keywords": {
+              "version": "1.0.0",
+              "from": "css-font-weight-keywords@>=1.0.0 <2.0.0",
+              "resolved": "https://registry.npmjs.org/css-font-weight-keywords/-/css-font-weight-keywords-1.0.0.tgz"
+            },
+            "css-global-keywords": {
+              "version": "1.0.1",
+              "from": "css-global-keywords@>=1.0.1 <2.0.0",
+              "resolved": "https://registry.npmjs.org/css-global-keywords/-/css-global-keywords-1.0.1.tgz"
+            },
+            "css-list-helpers": {
+              "version": "1.0.1",
+              "from": "css-list-helpers@>=1.0.1 <2.0.0",
+              "resolved": "https://registry.npmjs.org/css-list-helpers/-/css-list-helpers-1.0.1.tgz"
+            },
+            "css-system-font-keywords": {
+              "version": "1.0.0",
+              "from": "css-system-font-keywords@>=1.0.0 <2.0.0",
+              "resolved": "https://registry.npmjs.org/css-system-font-keywords/-/css-system-font-keywords-1.0.0.tgz"
+            },
+            "tcomb": {
+              "version": "2.7.0",
+              "from": "tcomb@>=2.5.0 <3.0.0",
+              "resolved": "https://registry.npmjs.org/tcomb/-/tcomb-2.7.0.tgz"
+            },
+            "unquote": {
+              "version": "1.1.0",
+              "from": "unquote@>=1.1.0 <2.0.0",
+              "resolved": "https://registry.npmjs.org/unquote/-/unquote-1.1.0.tgz"
+            }
+          }
+        },
+        "units-css": {
+          "version": "0.4.0",
+          "from": "units-css@>=0.4.0 <0.5.0",
+          "resolved": "https://registry.npmjs.org/units-css/-/units-css-0.4.0.tgz",
+          "dependencies": {
+            "isnumeric": {
+              "version": "0.2.0",
+              "from": "isnumeric@>=0.2.0 <0.3.0",
+              "resolved": "https://registry.npmjs.org/isnumeric/-/isnumeric-0.2.0.tgz"
+            },
+            "viewport-dimensions": {
+              "version": "0.2.0",
+              "from": "viewport-dimensions@>=0.2.0 <0.3.0",
+              "resolved": "https://registry.npmjs.org/viewport-dimensions/-/viewport-dimensions-0.2.0.tgz"
+            }
+          }
+        }
+      }
+    },
+    "color": {
+      "version": "1.0.3",
+      "from": "color@>=1.0.3 <2.0.0",
+      "resolved": "https://registry.npmjs.org/color/-/color-1.0.3.tgz",
+      "dependencies": {
+        "color-convert": {
+          "version": "1.9.0",
+          "from": "color-convert@>=1.8.2 <2.0.0",
+          "resolved": "https://registry.npmjs.org/color-convert/-/color-convert-1.9.0.tgz",
+          "dependencies": {
+            "color-name": {
+              "version": "1.1.2",
+              "from": "color-name@>=1.1.1 <2.0.0",
+              "resolved": "https://registry.npmjs.org/color-name/-/color-name-1.1.2.tgz"
+            }
+          }
+        },
+        "color-string": {
+          "version": "1.5.2",
+          "from": "color-string@>=1.4.0 <2.0.0",
+          "resolved": "https://registry.npmjs.org/color-string/-/color-string-1.5.2.tgz",
+          "dependencies": {
+            "color-name": {
+              "version": "1.1.2",
+              "from": "color-name@>=1.0.0 <2.0.0",
+              "resolved": "https://registry.npmjs.org/color-name/-/color-name-1.1.2.tgz"
+            },
+            "simple-swizzle": {
+              "version": "0.2.2",
+              "from": "simple-swizzle@>=0.2.2 <0.3.0",
+              "resolved": "https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.2.tgz",
+              "dependencies": {
+                "is-arrayish": {
+                  "version": "0.3.1",
+                  "from": "is-arrayish@>=0.3.1 <0.4.0",
+                  "resolved": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.3.1.tgz"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

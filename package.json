@@ -5,18 +5,27 @@
   "author": "Paul Nechifor <paul@nechifor.net> (http://nechifor.net/)",
   "main": "./lib",
   "scripts": {
-    "compile": "rm -fr lib/*; coffee --compile --bare --output lib src"
+    "compile": "rm -fr lib/*; coffee --compile --bare --output lib src",
+    "prepublish": "npm run compile -s"
   },
   "dependencies": {
-    "canvas": "^1.1.6",
-    "color": "^0.7.1"
+    "canvas": "^1.6.5",
+    "color": "^1.0.3"
   },
   "devDependencies": {
-    "coffee-script": "1.x"
+    "coffee-script": "^1.12.6"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/paul-nechifor/fluid-draw"
+    "url": "git+https://github.com/paul-nechifor/fluid-draw.git"
   },
-  "license": "MIT"
+  "keywords": [
+    "programmatic",
+    "art"
+  ],
+  "bugs": {
+    "url": "https://github.com/paul-nechifor/fluid-draw/issues"
+  },
+  "homepage": "https://github.com/paul-nechifor/fluid-draw#readme",
+  "license": "ISC"
 }

@@ -44,11 +44,10 @@ module.exports = class Squares extends Painter
       h: @rand @optsMap.hMin.value, @optsMap.hMax.value
       s: @rand @optsMap.sMin.value, @optsMap.sMax.value
       l: @rand @optsMap.lMin.value, @optsMap.lMax.value
-    @ctx.fillStyle = color.rgbString()
+    @ctx.fillStyle = color.rgb().string()
     posX = @startX + x * @squareSize
     posY = @startY + y * @squareSize
     @ctx.fillRect posX, posY, @squareSize, @squareSize
 
   rand: (min, max) ->
     Math.floor Math.random() * (max - min + 1) + min
-

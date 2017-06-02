@@ -15,6 +15,6 @@ Run:
 
 ## License
 
-MIT
+ISC
 
 [canvas-install]: https://www.npmjs.com/package/canvas#installation

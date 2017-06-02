@@ -1,2 +1,5 @@
-*.png
+.npmignore
 delete-this-crap
+examples
+npm-shrinkwrap.json
+src
