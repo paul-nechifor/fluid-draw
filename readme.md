@@ -7,11 +7,11 @@ A tool for parameterized drawings for web and CLIs.
 This uses `canvas` so [you need to follow the instructions for your
 platform][canvas-install].
 
-## Example usage
+## Examples
 
-Run:
+Create all the example images:
 
-    coffee examples/fan.coffee
+    example/create-all
 
 ## License
 
